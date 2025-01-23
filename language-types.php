@@ -389,4 +389,50 @@ var_dump($trimmed);
 $a = 20;
 $b = "America";
 echo sprintf("there is %u universitiy in %s.", $a, $b);
+echo "</br>";
+echo sprintf("there is %u universitiy in %s.", 20, 'America');
+
 ?>
+
+<hr>
+<h3>sscanf</h3>
+<?php
+$str = "riya,24";
+sscanf($str, "%s,%s", $fn, $ln);
+echo ($fn);
+echo ($ln);
+?>
+<hr>
+<?php 
+	$input_string = "Riya Vishwakarma 2411"; 
+	$first_name = ""; 
+	$last_name = ""; 
+	$number = "";
+	if (sscanf($input_string, "%s %s %d", $first_name, $last_name, $number) === 3) 
+	{ 
+		echo "First name: " . $first_name . "</br>"; 
+		echo "Last name: " . $last_name . "</br>"; 
+        echo "Number: " . $number;
+	} 
+?>
+<hr>
+<?php
+// get author info and generate DocBook entry
+$auth = "24\tLewis Carroll";
+$n = sscanf($auth, "%d\t%s %s", $id, $first, $last);
+echo "<author id='$id'>
+    <firstname>$first</firstname>
+    <surname>$last</surname>
+</author>\n";
+?>
+
+<hr>
+<h3>str_contains</h3>
+<?php
+$string = "my name is Riya vishwakarma.";
+if (str_contains($string, 'Riya'))
+{echo "yes";}
+else {
+    echo "no";
+}
+
